@@ -28,7 +28,7 @@ module.exports = {
     nav: [
       {
         text: '项目介绍',
-        link: '/intro',
+        link: '/',
       },
       {
         text: '敌人信息',
