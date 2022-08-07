@@ -20,24 +20,24 @@ jobs:
           uses: actions/setup-node@v3
           with:
             node-version: 16
-            cache: 'yarn'
 
-        - name: Build docs
-          run: |
-            yarn install
-            yarn run build
+        - name: Install dependencies
+          if: steps.cache-node-modules.outputs.cache-hit != 'true'
+          run: yarn install
 
         - name: Cache node_modules
           uses: actions/cache@v3
-          id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+          id: cache-node-modules # use this to check for `cache-hit` (`steps.cache-node-modules.outputs.cache-hit != 'true'`)
           with:
-            path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-            key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+            path: node_modules
+            key: ${{ runner.os }}-${{ matrix.node-version }}-nodeModules-${{ hashFiles('yarn.lock') }}-${{ hashFiles('package.json') }}
             restore-keys: |
-              ${{ runner.os }}-yarn-
+              ${{ runner.os }}-${{ matrix.node-version }}-nodeModules-
 
+        - name: Build docs
+          run: yarn run build
 
-        - name: Commit and push to gh-pages branch
+        - name: Commit and push to branch gh-pages
           run: |
             rm -rf .git
             cd src/.vuepress/dist
