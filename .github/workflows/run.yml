@@ -24,7 +24,7 @@ jobs:
         - name: Install dependencies and build docs
           run: |
             yarn install
-            yarn run bulid
+            yarn run build
 
         - name: Push changes to branch gh-pages
           uses: s0/git-publish-subdir-action@develop
