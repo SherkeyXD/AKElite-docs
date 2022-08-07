@@ -1,0 +1,44 @@
+name: build docs
+
+on: 
+  workflow_dispatch: 
+  push: 
+    branches: 
+      - "main"
+
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+    steps: 
+
+        - name: Checkout code
+          uses: actions/checkout@v3
+          with: 
+            ref: main
+
+        - name: Setup node 16
+          uses: actions/setup-node@v3
+          with:
+            node-version: 16
+            cache: 'yarn'
+
+        - name: Build docs
+          run: |
+            yarn install
+            yarn run build
+
+        - name: Commit and push to gh-pages branch
+          run: |
+            rm -rf .git
+            cd src/.vuepress/dist
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git init && git add .
+            git commit -m "Site update on: $(date -d "today" + "%Y-%m-%d %H:%M:%S")"
+
+        - name: Push changes
+          uses: ad-m/github-push-action@master
+          with:
+            github_token: ${{ secrets.DEPLOY_KEY }}
+            branch: gh-pages
+            force: true

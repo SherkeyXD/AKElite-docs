@@ -2,7 +2,6 @@
 title: 领袖敌人
 permalink: /boss
 ---
-
 ![大鲍勃](https://img.sherkey.ml:8088/boss/大鲍勃.png "大鲍勃")
 ![大亚当](https://img.sherkey.ml:8088/boss/大亚当.png "大亚当")
 ![萨卡兹百夫长](https://img.sherkey.ml:8088/boss/萨卡兹百夫长.png "萨卡兹百夫长")
