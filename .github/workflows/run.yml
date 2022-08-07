@@ -27,13 +27,23 @@ jobs:
             yarn install
             yarn run build
 
+        - name: Cache node_modules
+          uses: actions/cache@v3
+          id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+          with:
+            path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+            restore-keys: |
+              ${{ runner.os }}-yarn-
+
+
         - name: Commit and push to gh-pages branch
           run: |
             rm -rf .git
             cd src/.vuepress/dist
+            git init && git add .
             git config --local user.email "github-actions[bot]@users.noreply.github.com"
             git config --local user.name "github-actions[bot]"
-            git init && git add .
             git commit -m "Site update on: $(date -d "today" + "%Y-%m-%d %H:%M:%S")"
 
         - name: Push changes
