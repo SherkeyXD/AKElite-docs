@@ -24,6 +24,7 @@ module.exports = {
     editLinks: false,
     docsDir: '',
     editLinkText: '',
+    smoothScroll: true,
     lastUpdated: false,
     nav: [
       {
@@ -64,7 +65,6 @@ module.exports = {
    */
   plugins: [
     '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
     ['@vuepress/search', {
       searchMaxSuggestions: 10
     }],
@@ -72,5 +72,6 @@ module.exports = {
       serviceWorker: true,
       updatePopup: true
     }],
+    'img-lazy',
   ]
 }
