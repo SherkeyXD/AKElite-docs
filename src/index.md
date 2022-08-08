@@ -18,10 +18,12 @@ footer: Made by Sherkey with ❤
 
 随着方舟的版本迭代，越来越多的新机制慢慢出现,比如黑键的三技能“只以精英或领袖敌人为攻击目标”。但目前方舟还没有实现在游戏内查询精英敌人数据的功能，于是便有了这个项目。
 
-其实，关于敌人的类型，你可以在 [PRTS Wiki](https://prts.wiki) 中的 [敌人一览 - PRTS Wiki](https://prts.wiki/w/敌人一览) 上查到。但这个页面提供的信息太多导致内容重点不明显。因此，我设立了这个小站，作为
+其实，关于敌人的类型，你可以在 [PRTS Wiki](https://prts.wiki) 中的 [敌人一览 - PRTS Wiki](https://prts.wiki/w/敌人一览) 上查到。但这个页面提供的信息太多导致内容重点不明显。因此，我设立了这个小站，作为一个能够快速查询敌人精英情况的网站。
 
 
+## 实现思路
 
+网站的图片由 python 程序从 PRTS 下载到专用的服务器上，用 nginx 搭建简易图床，同时用 python 从游戏数据（来自[Kengxxiao/ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData)）生成涵盖敌人信息的 markdown 文件，最终由 vuepress 渲染而成
 
 
 ## 版权声明
