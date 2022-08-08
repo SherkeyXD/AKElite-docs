@@ -25,6 +25,12 @@ jobs:
           run: |
             yarn install
             yarn run build
+            echo "akelite.sherkey.ml" > src/.vuepress/dist/CNAME
+
+        - name: Get current date
+          id: date
+          run: echo "::set-output name=today::$(TZ=UTC-8 date +"%Y-%m-%d %T")"
+
 
         - name: Push changes to branch gh-pages
           uses: s0/git-publish-subdir-action@develop
@@ -34,4 +40,4 @@ jobs:
             FOLDER: src/.vuepress/dist
             GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
             SQUASH_HISTORY: true
-            MESSAGE: 'Site update on: $(TZ=UTC-8 date +"%Y-%m-%d %T")'
+            MESSAGE: 'Site update on: {{ steps.date.outputs.today }}'
