@@ -2,7 +2,7 @@
 home: true
 heroImage: /logo/1024x.png
 tagline: 用于查询明日方舟精英敌人数据的网页
-actionText: 精英敌人 →
+actionText: 查看精英敌人 →
 actionLink: /elite/
 features:
 - title: 简洁至上
@@ -23,7 +23,7 @@ footer: Made by Sherkey with ❤
 
 ## 实现思路
 
-网站的图片由 python 程序从 PRTS 下载到专用的服务器上，用 nginx 搭建简易图床，同时用 python 从游戏数据（来自[Kengxxiao/ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData)）生成涵盖敌人信息的 markdown 文件，最终由 vuepress 渲染而成
+网站的图片由 python 程序从 PRTS 下载到专用的服务器上，用 nginx 搭建简易图床，同时用 python 从游戏数据（来自[Kengxxiao/ArknightsGameData](https://github.com/Kengxxiao/ArknightsGameData)）生成涵盖敌人信息的 markdown 文件，最终由 vuepress 渲染而成，网站托管在 vercel 上
 
 
 ## 版权声明
