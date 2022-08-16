@@ -39,6 +39,7 @@ permalink: /boss
 ![屠谕者，大群意志](https://img.sherkey.ml:8088/boss/屠谕者，大群意志.png "屠谕者，大群意志")
 ![白垩，“尘世遗骸”](https://img.sherkey.ml:8088/boss/白垩，“尘世遗骸”.png "白垩，“尘世遗骸”")
 ![“唤醒”](https://img.sherkey.ml:8088/boss/“唤醒”.png "“唤醒”")
+![“物欲拮抗者”](https://img.sherkey.ml:8088/boss/“物欲拮抗者”.png "“物欲拮抗者”")
 ![迷路的巨像](https://img.sherkey.ml:8088/boss/迷路的巨像.png "迷路的巨像")
 ![喷气人](https://img.sherkey.ml:8088/boss/喷气人.png "喷气人")
 ![“遗弃者”](https://img.sherkey.ml:8088/boss/“遗弃者”.png "“遗弃者”")
@@ -54,3 +55,4 @@ permalink: /boss
 ![“剧作家”](https://img.sherkey.ml:8088/boss/“剧作家”.png "“剧作家”")
 ![“米兰”](https://img.sherkey.ml:8088/boss/“米兰”.png "“米兰”")
 ![圆岩巨像](https://img.sherkey.ml:8088/boss/圆岩巨像.png "圆岩巨像")
+![“漫游小屋”](https://img.sherkey.ml:8088/boss/“漫游小屋”.png "“漫游小屋”")
